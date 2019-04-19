@@ -4,12 +4,12 @@ int choose=0;
 int a1=0,b1=0,c1=0,d1=0,a2=0,b2=0,c2=0,d2=0,a3=0,b3=0,c3=0,d3=0;
 int d=0,dx=0,dy=0,dz=0;
 //=================================
-void TWO_for_ONE();
-void THREE_for_ONE(); 
-void TWO_for_ONE_open();
-void THREE_for_ONE_open();
-void Judge_TWO_for_ONE();
-void Judge_THREE_for_ONE();
+void TWO_for_ONE();//運算d,dx,dy 
+void THREE_for_ONE();//運算d,dx,dy,dz
+void TWO_for_ONE_open();//輸入二元一次方程式組的係數 
+void THREE_for_ONE_open();//輸入三元一次方程式組的係數
+void Judge_TWO_for_ONE();//判斷是否為無解或無限多組解 
+void Judge_THREE_for_ONE();//判斷是否為無解或無限多組解
 int main() 
 {
 	system("color A");
@@ -25,6 +25,7 @@ int main()
 	case 2:
 		THREE_for_ONE_open();
 		THREE_for_ONE();
+		Judge_THREE_for_ONE();
 		break;
 	}
 	return 0;
@@ -94,6 +95,30 @@ void THREE_for_ONE_open()
 	printf("請輸入第二式的d3係數: ");
 	scanf("%d",&d3);
 }
+void THREE_for_ONE()
+{
+	d=a1*b2*c3+a2*b3*c1+a3*c2*b1-c1*b2*a3-c2*b3*a1-c3*a2*b1;
+	dx=d1*b2*c3+d2*b3*c1+d3*c2*b1-c1*b2*d3-c2*b3*d1-c3*d2*b1;
+	dy=a1*d2*c3+a2*d3*c1+a3*c2*d1-c1*d2*a3-c2*d3*a1-c3*a2*d1;
+	dz=a1*b2*d3+a2*b3*d1+a3*d2*b1-d1*b2*a3-d2*b3*a1-d3*a2*b1;
+	printf("△=%d\n",d);
+	printf("△x=%d/%d\n",dx,d);
+	printf("△y=%d/%d\n",dy,d);
+	printf("△z=%d/%d\n",dz,d);
+}
+void Judge_THREE_for_ONE()
+{
+	if(d==0&&dx==0&&dy==0&&dz==0)
+		{
+			printf("無限多組解!");
+		}
+	if(d==0&&(dx!=0||dy!=0||dz!=0))
+		{
+			printf("無解!");
+		}
+}
+
+
 void THREE_for_ONE()
 {
 	d=a1*b2*c3+a2*b3*c1+a3*c2*b1-c1*b2*a3-c2*b3*a1-c3*a2*b1;
