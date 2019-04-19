@@ -117,8 +117,6 @@ void Judge_THREE_for_ONE()
 			printf("無解!");
 		}
 }
-
-
 void THREE_for_ONE()
 {
 	d=a1*b2*c3+a2*b3*c1+a3*c2*b1-c1*b2*a3-c2*b3*a1-c3*a2*b1;
