@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+int a1=0,b1=0,c1=0,a2=0,b2=0,c2=0;
+int d=0,dx=0,dy=0;
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+void open();
+void TWO_for_ONE();
+int main(int argc, char *argv[]) 
+{
+	open();
+	TWO_for_ONE();
+	return 0;
+}
+void open()
+{
+	printf("{a1X+b1Y=c1\n{a2X+b2Y=c2\n");
+	printf("請輸入第一式的a1係數: ");
+	scanf("%d",&a1);
+	printf("請輸入第一式的b1係數: ");
+	scanf("%d",&b1);
+	printf("請輸入第一式的c1係數: ");
+	scanf("%d",&c1);
+	printf("請輸入第二式的a2係數: ");
+	scanf("%d",&a2);
+	printf("請輸入第二式的b2係數: ");
+	scanf("%d",&b2);
+	printf("請輸入第二式的c2係數: ");
+	scanf("%d",&c2);
+	
+}
+void TWO_for_ONE()
+{
+	d=a1*b2-a2*b1;
+	dy=a1*c2-a2*c1;
+	dx=c1*b2-b1*c2;
+	
+	printf("△=%d",d);
+	printf("△x=%d/%d",dx,d);
+	printf("△x=%d/%d",dy,d);
+}
