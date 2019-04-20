@@ -147,10 +147,7 @@ int gd_x(int dx,int d)
 	if (dx < d ) {
         dx=d;
         d=dx;
-    } else {
-        dx=dx;
-        d=d;
-    }
+    } 
     if (d == 0)  
         return dx;
     else
@@ -160,9 +157,6 @@ int gd_y(int dy,int d)
 {
 	if (dy < d ) {
         dy=d;
-        d=dy;
-    } else {
-        dy=dy;
         d=dy;
     }
     if (d == 0)  
@@ -175,10 +169,7 @@ int gd_z(int dz,int d)
 	if (dz < d ) {
         dz=d;
         d=dz;
-    } else {
-        dz=dz;
-        d=d;
-    }
+    } 
     if (d == 0)  
         return dz;
     else
